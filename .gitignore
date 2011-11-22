@@ -9,3 +9,6 @@ _ReSharper*/
 *.cache
 /msbuild.log
 source/bbv.Common.sln.docstates
+packages/
+*.suo
+*.user

@@ -37,12 +37,12 @@
 
         private void HandleDoorOpened(object sender, EventArgs e)
         {
-            Console.WriteLine("{0}: Door is open!", this.Name);
+            this.DataBus.SendAsync(Data.New(this.Name, "Door is open!"));
         }
 
         private void HandleDoorClosed(object sender, EventArgs e)
         {
-            Console.WriteLine("{0}: Door is closed!", this.Name);
+            this.DataBus.SendAsync(Data.New(this.Name, "Door is closed!"));
         }
     }
 }

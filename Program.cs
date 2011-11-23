@@ -4,8 +4,6 @@
 
     using bbv.Common.Bootstrapper;
 
-    using bootstrapper.sample.Sirius;
-
     public static class Program
     {
         public static void Main(string[] args)
@@ -13,7 +11,6 @@
             using (var bootstrapper = new DefaultBootstrapper<ISensor>())
             {
                 bootstrapper.Initialize(new SensorLifetimeStrategy());
-                bootstrapper.AddExtension(new DoorSensor(new VhptDoor()));
 
                 PrintHeader();
 

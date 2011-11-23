@@ -37,8 +37,14 @@
     <Reference Include="bbv.Common">
       <HintPath>packages\bbv.Common.7.1.11324.1143\lib\Net40\bbv.Common.dll</HintPath>
     </Reference>
+    <Reference Include="bbv.Common.AsyncModule">
+      <HintPath>packages\bbv.Common.AsyncModule.7.2.11324.1143\lib\Net40\bbv.Common.AsyncModule.dll</HintPath>
+    </Reference>
     <Reference Include="bbv.Common.Bootstrapper">
       <HintPath>packages\bbv.Common.Bootstrapper.7.1.11324.1143\lib\Net40\bbv.Common.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject">
+      <HintPath>packages\Ninject.2.2.1.4\lib\net40-Client\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -54,11 +60,16 @@
   <ItemGroup>
     <Compile Include="DoorSensor.cs" />
     <Compile Include="ISensor.cs" />
+    <Compile Include="NinjectExtensionResolver.cs" />
+    <Compile Include="SensorModule.cs" />
+    <Compile Include="Sirius\IVhptDataBus.cs" />
+    <Compile Include="Sirius\IVphtMessageBus.cs" />
     <Compile Include="Sirius\IVhptDoor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractSensor.cs" />
     <Compile Include="SensorLifetimeStrategy.cs" />
+    <Compile Include="Sirius\SiriusModule.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

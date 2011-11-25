@@ -58,20 +58,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlackHoleSensor.cs" />
     <Compile Include="DoorSensor.cs" />
+    <Compile Include="Heartbeat\HeartbeatModule.cs" />
+    <Compile Include="Heartbeat\IStartHeartbeat.cs" />
+    <Compile Include="Heartbeat\IStopHeartbeat.cs" />
+    <Compile Include="Heartbeat\MakeAwareOfHeartbeat.cs" />
+    <Compile Include="Heartbeat\StartHeartbeat.cs" />
+    <Compile Include="Heartbeat\StopHeartbeat.cs" />
     <Compile Include="ISensor.cs" />
     <Compile Include="NinjectExtensionResolver.cs" />
     <Compile Include="SensorModule.cs" />
+    <Compile Include="SerotoninSensor.cs" />
+    <Compile Include="Sirius\IVhptBlackHoleSubOrbitDetectionEngine.cs" />
     <Compile Include="Sirius\IVhptDataBus.cs" />
+    <Compile Include="Sirius\IVhptHeartbeatGenerator.cs" />
     <Compile Include="Sirius\IVphtMessageBus.cs" />
     <Compile Include="Sirius\IVhptDoor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="AbstractSensor.cs" />
     <Compile Include="SensorLifetimeStrategy.cs" />
+    <Compile Include="Sirius\IVphtSerotoninProbe.cs" />
     <Compile Include="Sirius\SiriusModule.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

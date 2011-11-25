@@ -20,7 +20,7 @@
 
         public VhptDoor()
         {
-            var doorIsOpen = from interval in Observable.Interval(TimeSpan.FromSeconds(1))
+            var doorIsOpen = from interval in Observable.Interval(TimeSpan.FromSeconds(4))
                              select Convert.ToBoolean(interval % 2);
 
             this.observer = doorIsOpen.Subscribe(value =>

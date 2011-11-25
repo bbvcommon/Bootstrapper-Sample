@@ -29,7 +29,7 @@ namespace bootstrapper.sample.Sirius
 
         public override string ToString()
         {
-            return string.Format("Originator = \"{0}\", Content = \"{1}\"", Originator, Content);
+            return string.Format("\"{0}: {1}\"", Originator, Content);
         }
     }
 
@@ -71,7 +71,6 @@ namespace bootstrapper.sample.Sirius
         [MessageConsumer]
         public void Consume(Data data)
         {
-            Console.WriteLine("DataBus: {0} sending...", data);
             this.streamWriter.WriteLine(data);
             Console.WriteLine("DataBus: {0} was sent.", data);
         }

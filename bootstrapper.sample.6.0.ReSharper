@@ -25,6 +25,7 @@
           <Item>unsafe</Item>
           <Item>volatile</Item>
         </MODIFIERS_ORDER>
+        <REDUNDANT_THIS_QUALIFIER_STYLE>ALWAYS_USE</REDUNDANT_THIS_QUALIFIER_STYLE>
       </FormatSettings>
       <UsingsSettings>
         <AddImportsToDeepestScope>True</AddImportsToDeepestScope>

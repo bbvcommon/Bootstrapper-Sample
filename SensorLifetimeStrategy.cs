@@ -27,7 +27,7 @@
 
         public override IExtensionResolver<ISensor> CreateExtensionResolver()
         {
-            return new NinjectExtensionResolver(this.standardKernel.Value);
+            return this.standardKernel.Value.Get<IExtensionResolver<ISensor>>();
         }
 
         protected override void DefineRunSyntax(ISyntaxBuilder<ISensor> builder)

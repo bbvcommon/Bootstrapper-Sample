@@ -67,7 +67,7 @@
     <Compile Include="Heartbeat\StartHeartbeat.cs" />
     <Compile Include="Heartbeat\StopHeartbeat.cs" />
     <Compile Include="ISensor.cs" />
-    <Compile Include="NinjectExtensionResolver.cs" />
+    <Compile Include="NinjectSensorResolver.cs" />
     <Compile Include="SensorModule.cs" />
     <Compile Include="SerotoninSensor.cs" />
     <Compile Include="Sirius\IVhptBlackHoleSubOrbitDetectionEngine.cs" />

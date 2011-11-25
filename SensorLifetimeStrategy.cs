@@ -62,11 +62,6 @@
             base.Dispose(disposing);
         }
 
-        private IVhptHeartbeatGenerator GetVphtHeartbeatGenerator()
-        {
-            return this.standardKernel.Value.Get<IVhptHeartbeatGenerator>();
-        }
-
         private IVphtMessageBus GetVphtMessageBus()
         {
             return this.standardKernel.Value.Get<IVphtMessageBus>();

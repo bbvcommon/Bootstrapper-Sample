@@ -1,4 +1,6 @@
-﻿namespace bootstrapper.sample
+﻿using Ninject.Syntax;
+
+namespace bootstrapper.sample
 {
     using System;
     using System.Reflection;
@@ -21,6 +23,7 @@
                     {
                         var kernel = new StandardKernel();
                         kernel.Load(Assembly.GetExecutingAssembly());
+                        kernel.Bind<IResolutionRoot>().ToConstant(kernel);
                         return kernel;
                     });
         }

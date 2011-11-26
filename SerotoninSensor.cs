@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using bootstrapper.sample.Sirius;
 
-    public class SerotoninSensor : AbstractSensor, IVhptHeartbeatAware, IVphtHandleMessage<BlackHoleDetected>
+    public class SerotoninSensor : AbstractSensor, IVhptHeartbeatAware, IVphtHandleMessage<BlackHoleDetected>, ISerotoninSensor
     {
         private readonly Dictionary<int, string> knownSerotoninLevels =
             new Dictionary<int, string>

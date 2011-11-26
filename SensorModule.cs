@@ -9,9 +9,9 @@
         {
             this.Bind<IExtensionResolver<ISensor>>().To<NinjectSensorResolver>().InSingletonScope();
 
-            this.Bind<ISensor>().To<DoorSensor>();
-            this.Bind<ISensor>().To<SerotoninSensor>();
-            this.Bind<ISensor>().To<BlackHoleSensor>();
+            this.Bind<IDoorSensor>().To<DoorSensor>();
+            this.Bind<ISerotoninSensor>().To<SerotoninSensor>();
+            this.Bind<IBlackHoleSensor>().To<BlackHoleSensor>();
         }
     }
 }

@@ -4,7 +4,7 @@
 
     using bootstrapper.sample.Sirius;
 
-    public class DoorSensor : AbstractSensor
+    public class DoorSensor : AbstractSensor, IDoorSensor
     {
         private readonly IVhptDoor door;
 

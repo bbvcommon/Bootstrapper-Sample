@@ -1,23 +1,23 @@
 ﻿namespace bootstrapper.sample
 {
-    using System.Collections.Generic;
     using bbv.Common.Bootstrapper;
+    using Ninject;
+    using Ninject.Syntax;
 
     public class NinjectSensorResolver : IExtensionResolver<ISensor>
     {
-        private readonly IEnumerable<ISensor> sensors;
+        private readonly IResolutionRoot resolutionRoot;
 
-        public NinjectSensorResolver(IEnumerable<ISensor> sensors)
+        public NinjectSensorResolver(IResolutionRoot resolutionRoot)
         {
-            this.sensors = sensors;
+            this.resolutionRoot = resolutionRoot;
         }
 
         public void Resolve(IExtensionPoint<ISensor> extensionPoint)
         {
-            foreach (ISensor sensor in this.sensors)
-            {
-                extensionPoint.AddExtension(sensor);
-            }
+            extensionPoint.AddExtension(this.resolutionRoot.Get<IDoorSensor>());
+            extensionPoint.AddExtension(this.resolutionRoot.Get<ISerotoninSensor>());
+            extensionPoint.AddExtension(this.resolutionRoot.Get<IBlackHoleSensor>());
         }
     }
 }

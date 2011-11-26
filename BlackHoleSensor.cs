@@ -3,7 +3,7 @@
     using System;
     using bootstrapper.sample.Sirius;
 
-    public class BlackHoleSensor : AbstractSensor, IDisposable
+    public class BlackHoleSensor : AbstractSensor, IDisposable, IBlackHoleSensor
     {
         private readonly IVhptBlackHoleSubOrbitDetectionEngine detectionEngine;
         private bool isDisposed;

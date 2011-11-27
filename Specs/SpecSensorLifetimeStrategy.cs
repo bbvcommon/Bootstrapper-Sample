@@ -25,7 +25,7 @@ namespace bootstrapper.sample.Specs
 
         public override IExtensionResolver<ISensor> CreateExtensionResolver()
         {
-            this.NeedKernels.ForEach(h => h.Need(this.standardKernel.Value));
+            this.NeedKernels.ForEach(h => h.Need(this.Kernel));
 
             return new DecoratedExtensionResolver(base.CreateExtensionResolver(), this.selector);
         }

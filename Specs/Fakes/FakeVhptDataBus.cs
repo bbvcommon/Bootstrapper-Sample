@@ -1,8 +1,8 @@
-namespace bootstrapper.sample.Specs
+namespace bootstrapper.sample.Specs.Fakes
 {
     using System.Collections.Concurrent;
     using System.Collections.Generic;
-    using Sirius;
+    using bootstrapper.sample.Sirius;
 
     public class FakeVhptDataBus : IVhptDataBus
     {

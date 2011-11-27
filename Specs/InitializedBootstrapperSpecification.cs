@@ -2,6 +2,7 @@
 {
     using bbv.Common.Bootstrapper;
     using Machine.Specifications;
+    using Magic;
 
     public class InitializedBootstrapperSpecification
     {
@@ -16,7 +17,5 @@
 
             Bootstrapper.Initialize(Strategy);
         };
-
-
     }
 }

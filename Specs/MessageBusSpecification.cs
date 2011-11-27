@@ -1,6 +1,8 @@
 ﻿namespace bootstrapper.sample.Specs
 {
+    using Fakes;
     using Machine.Specifications;
+    using Magic;
     using Sirius;
 
     public class MessageBusSpecification : InitializedBootstrapperSpecification

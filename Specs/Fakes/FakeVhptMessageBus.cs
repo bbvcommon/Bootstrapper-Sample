@@ -1,10 +1,10 @@
-namespace bootstrapper.sample.Specs
+namespace bootstrapper.sample.Specs.Fakes
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Reflection;
-    using Sirius;
+    using bootstrapper.sample.Sirius;
 
     public class FakeVhptMessageBus : IVphtMessageBus
     {
@@ -101,7 +101,7 @@ namespace bootstrapper.sample.Specs
                 {
                     if (pair.Key.IsAssignableFrom(messageType))
                     {
-                        pair.Value.Invoke(target, new[] {message});
+                        pair.Value.Invoke(target, new[] { message });
                         return true;
                     }
                 }

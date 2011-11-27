@@ -97,16 +97,18 @@
     <Compile Include="Specs\BlackHoleSpecification.cs" />
     <Compile Include="Specs\BootstrapperExtensions.cs" />
     <Compile Include="Specs\DataBusSpecification.cs" />
-    <Compile Include="Specs\DecoratedBootstrapper.cs" />
-    <Compile Include="Specs\FakeVhptDataBus.cs" />
-    <Compile Include="Specs\FakeVhptMessageBus.cs" />
-    <Compile Include="Specs\FieldsWithAttributeCaching.cs" />
-    <Compile Include="Specs\INeedKernel.cs" />
+    <Compile Include="Specs\Magic\DecoratedBootstrapper.cs" />
+    <Compile Include="Specs\Magic\DecoratedExtensionPoint.cs" />
+    <Compile Include="Specs\Magic\DecoratedExtensionResolver.cs" />
+    <Compile Include="Specs\Fakes\FakeVhptDataBus.cs" />
+    <Compile Include="Specs\Fakes\FakeVhptMessageBus.cs" />
+    <Compile Include="Specs\Magic\FieldsWithAttributeCaching.cs" />
+    <Compile Include="Specs\Magic\INeedKernel.cs" />
     <Compile Include="Specs\InitializedBootstrapperSpecification.cs" />
-    <Compile Include="Specs\InjectFieldsWithInjectAttribute.cs" />
+    <Compile Include="Specs\Magic\InjectFieldsWithInjectAttribute.cs" />
     <Compile Include="Specs\MessageBusSpecification.cs" />
-    <Compile Include="Specs\RebindAttribute.cs" />
-    <Compile Include="Specs\RebindFieldsWithRebindAttribute.cs" />
+    <Compile Include="Specs\Magic\RebindAttribute.cs" />
+    <Compile Include="Specs\Magic\RebindFieldsWithRebindAttribute.cs" />
     <Compile Include="Specs\SpecSensorLifetimeStrategy.cs" />
     <Compile Include="Specs\when_black_hole_detected_and_panic_mode_enabled.cs" />
   </ItemGroup>

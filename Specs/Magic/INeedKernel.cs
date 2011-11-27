@@ -1,4 +1,4 @@
-﻿namespace bootstrapper.sample.Specs
+﻿namespace bootstrapper.sample.Specs.Magic
 {
     using Ninject;
 

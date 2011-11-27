@@ -1,6 +1,8 @@
 ﻿namespace bootstrapper.sample.Specs
 {
     using System;
+    using System.Linq;
+    using Magic;
 
     public static class BootstrapperExtensions
     {
@@ -24,6 +26,19 @@
         {
             bootstrapper.AddExtension(new RebindFieldsWithRebindAttribute<TSpecification>());
             bootstrapper.AddExtension(new InjectFieldsWithInjectAttribute<TSpecification>());
+        }
+
+        public static void Ignore(this DecoratedBootstrapper bootstrapper, params Type[] sensorType)
+        {
+            bootstrapper.SetSelector(sensor =>
+                                         {
+                                             Type sensorInterface = sensor.GetType().GetInterfaces().Where(
+                                                 @interface =>
+                                                 @interface != typeof(ISensor) &&
+                                                 typeof(ISensor).IsAssignableFrom(@interface)).SingleOrDefault();
+
+                                             return sensorInterface == null || !sensorType.Contains(sensorInterface);
+                                         });
         }
     }
 }

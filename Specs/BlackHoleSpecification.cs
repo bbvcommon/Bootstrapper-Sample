@@ -1,6 +1,7 @@
 ﻿namespace bootstrapper.sample.Specs
 {
     using Machine.Specifications;
+    using Magic;
     using Moq;
     using Sirius;
 
@@ -13,6 +14,7 @@
         {
             BlackHoleEngine = new Mock<IVhptBlackHoleSubOrbitDetectionEngine>();
 
+            Bootstrapper.Ignore(typeof(IDoorSensor));
             Bootstrapper.Scan<BlackHoleSpecification>();
         };
     }

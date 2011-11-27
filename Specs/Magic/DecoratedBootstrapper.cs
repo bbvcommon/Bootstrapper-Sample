@@ -1,5 +1,7 @@
-namespace bootstrapper.sample.Specs
+namespace bootstrapper.sample.Specs.Magic
 {
+    using System;
+    using bbv.Common;
     using bbv.Common.Bootstrapper;
 
     public class DecoratedBootstrapper : IBootstrapper<ISensor>
@@ -10,6 +12,11 @@ namespace bootstrapper.sample.Specs
         public DecoratedBootstrapper(IBootstrapper<ISensor> decoratedBootstrapper)
         {
             this.decoratedBootstrapper = decoratedBootstrapper;
+        }
+
+        public void SetSelector(Func<ISensor, bool> selector)
+        {
+            this.strategy.SetSelector(selector);
         }
 
         public void AddExtension(INeedKernel needKernel)
@@ -29,6 +36,8 @@ namespace bootstrapper.sample.Specs
 
         public void Initialize(IStrategy<ISensor> strategy)
         {
+            Ensure.ArgumentAssignableFrom(typeof(SpecSensorLifetimeStrategy), strategy, "strategy");
+
             this.strategy = (SpecSensorLifetimeStrategy)strategy;
             this.decoratedBootstrapper.Initialize(strategy);
         }

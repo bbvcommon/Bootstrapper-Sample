@@ -14,7 +14,7 @@ namespace bootstrapper.sample
 
     public class SensorLifetimeStrategy : AbstractStrategy<ISensor>
     {
-        private readonly Lazy<IKernel> standardKernel;
+        protected readonly Lazy<IKernel> standardKernel;
 
         public SensorLifetimeStrategy()
         {

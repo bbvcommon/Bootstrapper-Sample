@@ -11,7 +11,8 @@
     <RootNamespace>bootstrapper.sample</RootNamespace>
     <AssemblyName>bootstrapper.sample</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -42,6 +43,15 @@
     </Reference>
     <Reference Include="bbv.Common.Bootstrapper, Version=7.1.0.0, Culture=neutral, PublicKeyToken=917bca444d1f2b4c, processorArchitecture=MSIL">
       <HintPath>packages\bbv.Common.Bootstrapper.7.1.11330.2206\lib\Net40\bbv.Common.Bootstrapper.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentAssertions">
+      <HintPath>packages\FluentAssertions.1.6.0\Lib\net40\FluentAssertions.dll</HintPath>
+    </Reference>
+    <Reference Include="Machine.Specifications">
+      <HintPath>packages\Machine.Specifications-Signed.0.5.0.0\lib\Machine.Specifications.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
     <Reference Include="Ninject">
       <HintPath>packages\Ninject.2.2.1.4\lib\net40-Client\Ninject.dll</HintPath>
@@ -84,6 +94,21 @@
     <Compile Include="SensorLifetimeStrategy.cs" />
     <Compile Include="Sirius\IVphtSerotoninProbe.cs" />
     <Compile Include="Sirius\SiriusModule.cs" />
+    <Compile Include="Specs\BlackHoleSpecification.cs" />
+    <Compile Include="Specs\BootstrapperExtensions.cs" />
+    <Compile Include="Specs\DataBusSpecification.cs" />
+    <Compile Include="Specs\DecoratedBootstrapper.cs" />
+    <Compile Include="Specs\FakeVhptDataBus.cs" />
+    <Compile Include="Specs\FakeVhptMessageBus.cs" />
+    <Compile Include="Specs\FieldsWithAttributeCaching.cs" />
+    <Compile Include="Specs\INeedKernel.cs" />
+    <Compile Include="Specs\InitializedBootstrapperSpecification.cs" />
+    <Compile Include="Specs\InjectFieldsWithInjectAttribute.cs" />
+    <Compile Include="Specs\MessageBusSpecification.cs" />
+    <Compile Include="Specs\RebindAttribute.cs" />
+    <Compile Include="Specs\RebindFieldsWithRebindAttribute.cs" />
+    <Compile Include="Specs\SpecSensorLifetimeStrategy.cs" />
+    <Compile Include="Specs\when_black_hole_detected_and_panic_mode_enabled.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

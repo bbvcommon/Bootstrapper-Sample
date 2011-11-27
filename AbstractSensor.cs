@@ -8,9 +8,9 @@
 
         public abstract string Describe();
 
-        public IVphtMessageBus MessageBus { get; private set; }
+        protected IVphtMessageBus MessageBus { get; private set; }
 
-        public IVhptDataBus DataBus { get; private set; }
+        protected IVhptDataBus DataBus { get; private set; }
 
         public void MessageBusInitialized(IVphtMessageBus messageBus)
         {

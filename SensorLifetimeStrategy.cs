@@ -33,17 +33,22 @@ namespace bootstrapper.sample
             return this.standardKernel.Value.Get<IExtensionResolver<ISensor>>();
         }
 
+        protected IKernel Kernel
+        {
+            get { return this.standardKernel.Value; }
+        }
+
         protected override void DefineRunSyntax(ISyntaxBuilder<ISensor> builder)
         {
             builder
                 .Begin
-                    .With(new ExtensionConfigurationSectionBehavior())
+                    .With(() => this.Kernel.Get<ExtensionConfigurationSectionBehavior>())
                 .Execute(() => GetVphtMessageBus(), (sensor, messagebus) => sensor.MessageBusInitialized(messagebus))
                 .Execute(() => GetVphtDataBus(), (sensor, databus) => sensor.DataBusInitialized(databus))
                 .Execute(sensor => sensor.Initialize())
                 .Execute(sensor => sensor.StartObservation())
-                    .With(() => this.standardKernel.Value.Get<IMakeAwareOfHeartbeat>())
-                    .With(() => this.standardKernel.Value.Get<IStartHeartbeat>());
+                    .With(() => this.Kernel.Get<IMakeAwareOfHeartbeat>())
+                    .With(() => this.Kernel.Get<IStartHeartbeat>());
         }
 
         protected override void DefineShutdownSyntax(ISyntaxBuilder<ISensor> builder)
@@ -57,9 +62,9 @@ namespace bootstrapper.sample
 
         protected override void Dispose(bool disposing)
         {
-            if (this.standardKernel.IsValueCreated && !this.standardKernel.Value.IsDisposed)
+            if (this.standardKernel.IsValueCreated && !this.Kernel.IsDisposed)
             {
-                this.standardKernel.Value.Dispose();
+                this.Kernel.Dispose();
             }
 
             base.Dispose(disposing);
@@ -67,12 +72,12 @@ namespace bootstrapper.sample
 
         private IVphtMessageBus GetVphtMessageBus()
         {
-            return this.standardKernel.Value.Get<IVphtMessageBus>();
+            return this.Kernel.Get<IVphtMessageBus>();
         }
 
         private IVhptDataBus GetVphtDataBus()
         {
-            return this.standardKernel.Value.Get<IVhptDataBus>();
+            return this.Kernel.Get<IVhptDataBus>();
         }
     }
 }

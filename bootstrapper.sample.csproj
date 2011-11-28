@@ -35,10 +35,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="bbv.Common, Version=7.1.0.0, Culture=neutral, PublicKeyToken=917bca444d1f2b4c, processorArchitecture=MSIL">
-      <HintPath>packages\bbv.Common.7.1.11330.2206\lib\Net40\bbv.Common.dll</HintPath>
+      <HintPath>packages\bbv.Common.7.1.11331.1827\lib\Net40\bbv.Common.dll</HintPath>
     </Reference>
     <Reference Include="bbv.Common.Bootstrapper, Version=7.1.0.0, Culture=neutral, PublicKeyToken=917bca444d1f2b4c, processorArchitecture=MSIL">
-      <HintPath>packages\bbv.Common.Bootstrapper.7.1.11330.2206\lib\Net40\bbv.Common.Bootstrapper.dll</HintPath>
+      <HintPath>packages\bbv.Common.Bootstrapper.7.1.11331.1827\lib\Net40\bbv.Common.Bootstrapper.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

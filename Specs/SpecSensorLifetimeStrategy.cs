@@ -13,10 +13,13 @@ namespace bootstrapper.sample.Specs
         public SpecSensorLifetimeStrategy()
         {
             this.NeedKernels = new Collection<INeedKernel>();
+            this.Sensors = new Collection<ISensor>();
             this.SetSelector(sensor => true);
         }
 
         public Collection<INeedKernel> NeedKernels { get; private set; }
+
+        public Collection<ISensor> Sensors { get; private set; }
 
         public void SetSelector(Func<ISensor, bool> value)
         {
@@ -27,7 +30,7 @@ namespace bootstrapper.sample.Specs
         {
             this.NeedKernels.ForEach(h => h.Need(this.Kernel));
 
-            return new DecoratedExtensionResolver(base.CreateExtensionResolver(), this.selector);
+            return new DecoratedExtensionResolver(base.CreateExtensionResolver(), this.selector, this.Sensors);
         }
     }
 }

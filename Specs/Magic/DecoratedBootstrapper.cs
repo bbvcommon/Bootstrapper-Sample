@@ -1,10 +1,12 @@
 namespace bootstrapper.sample.Specs.Magic
 {
     using System;
+    using System.Collections;
+    using System.Collections.Generic;
     using bbv.Common;
     using bbv.Common.Bootstrapper;
 
-    public class DecoratedBootstrapper : IBootstrapper<ISensor>
+    public class DecoratedBootstrapper : IBootstrapper<ISensor>, IEnumerable<ISensor>
     {
         private readonly IBootstrapper<ISensor> decoratedBootstrapper;
         private SpecSensorLifetimeStrategy strategy;
@@ -50,6 +52,16 @@ namespace bootstrapper.sample.Specs.Magic
         public void Shutdown()
         {
             this.decoratedBootstrapper.Shutdown();
+        }
+
+        public IEnumerator<ISensor> GetEnumerator()
+        {
+            return this.strategy.Sensors.GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return this.GetEnumerator();
         }
     }
 }

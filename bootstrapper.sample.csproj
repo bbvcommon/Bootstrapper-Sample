@@ -47,8 +47,8 @@
     <Reference Include="FluentAssertions">
       <HintPath>packages\FluentAssertions.1.6.0\Lib\net40\FluentAssertions.dll</HintPath>
     </Reference>
-    <Reference Include="Machine.Specifications">
-      <HintPath>packages\Machine.Specifications-Signed.0.5.0.0\lib\Machine.Specifications.dll</HintPath>
+    <Reference Include="Machine.Specifications, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Machine.Specifications.0.5.0.0\lib\Machine.Specifications.dll</HintPath>
     </Reference>
     <Reference Include="Moq">
       <HintPath>packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
@@ -57,6 +57,7 @@
       <HintPath>packages\Ninject.2.2.1.4\lib\net40-Client\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Reactive">
       <HintPath>packages\Rx-Main.1.0.10621\lib\Net4\System.Reactive.dll</HintPath>
@@ -97,6 +98,7 @@
     <Compile Include="Specs\BlackHoleSpecification.cs" />
     <Compile Include="Specs\BootstrapperExtensions.cs" />
     <Compile Include="Specs\DataBusSpecification.cs" />
+    <Compile Include="Specs\ExtensionConfigurationSectionBehaviorFactoryWithExchangedSectionLoading.cs" />
     <Compile Include="Specs\Magic\DecoratedBootstrapper.cs" />
     <Compile Include="Specs\Magic\DecoratedExtensionPoint.cs" />
     <Compile Include="Specs\Magic\DecoratedExtensionResolver.cs" />
@@ -110,6 +112,7 @@
     <Compile Include="Specs\Magic\RebindAttribute.cs" />
     <Compile Include="Specs\Magic\RebindFieldsWithRebindAttribute.cs" />
     <Compile Include="Specs\SpecSensorLifetimeStrategy.cs" />
+    <Compile Include="Specs\when_black_hole_detected_and_panic_mode_disabled.cs" />
     <Compile Include="Specs\when_black_hole_detected_and_panic_mode_enabled.cs" />
   </ItemGroup>
   <ItemGroup>

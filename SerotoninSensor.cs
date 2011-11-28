@@ -34,7 +34,7 @@
 
         public override string Describe()
         {
-            return "Measures the serotinin level of the people transportet.";
+            return "Measures the serotinin level of the people transported.";
         }
 
         protected override void MessageBusInitializedCore(IVphtMessageBus messageBus)

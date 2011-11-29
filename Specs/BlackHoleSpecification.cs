@@ -1,21 +1,17 @@
 ﻿namespace bootstrapper.sample.Specs
 {
     using Machine.Specifications;
-    using Magic;
-    using Moq;
-    using Sirius;
 
     public class BlackHoleSpecification : DataBusSpecification
     {
-        [Rebind]
-        protected static Mock<IVhptBlackHoleSubOrbitDetectionEngine> BlackHoleEngine;
+        // HINT : Define static field here which is rebinded
+        // HINT : Think about what needs to be mocked away so that we can test without having an actual black hole present!
 
         Establish context = () =>
         {
-            BlackHoleEngine = new Mock<IVhptBlackHoleSubOrbitDetectionEngine>();
-
-            Bootstrapper.Ignore(typeof(IDoorSensor));
-            Bootstrapper.Scan<BlackHoleSpecification>();
+            // HINT : Assign static field with some mock
+            // HINT : Ignore
+            // HINT : Scan
         };
     }
 }

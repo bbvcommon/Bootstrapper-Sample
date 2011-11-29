@@ -5,13 +5,13 @@ namespace bootstrapper.sample
     using System;
     using System.Reflection;
     using bbv.Common.Bootstrapper;
-    using bbv.Common.Bootstrapper.Behavior;
-    using bbv.Common.Bootstrapper.Configuration;
     using bbv.Common.Bootstrapper.Syntax;
-    using bootstrapper.sample.Heartbeat;
     using bootstrapper.sample.Sirius;
     using Ninject;
 
+    // HINT : Extension resolver / Override
+    // HINT : DefineRunSyntax
+    // HINT : DefineShutdownSyntax
     public class SensorLifetimeStrategy : AbstractStrategy<ISensor>
     {
         private readonly Lazy<IKernel> standardKernel;
@@ -28,11 +28,6 @@ namespace bootstrapper.sample
                     });
         }
 
-        public override IExtensionResolver<ISensor> CreateExtensionResolver()
-        {
-            return this.standardKernel.Value.Get<IExtensionResolver<ISensor>>();
-        }
-
         protected IKernel Kernel
         {
             get { return this.standardKernel.Value; }
@@ -40,24 +35,12 @@ namespace bootstrapper.sample
 
         protected override void DefineRunSyntax(ISyntaxBuilder<ISensor> builder)
         {
-            builder
-                .Begin
-                    .With(() => this.Kernel.Get<ExtensionConfigurationSectionBehavior>())
-                .Execute(() => GetVphtMessageBus(), (sensor, messagebus) => sensor.MessageBusInitialized(messagebus))
-                .Execute(() => GetVphtDataBus(), (sensor, databus) => sensor.DataBusInitialized(databus))
-                .Execute(sensor => sensor.Initialize())
-                .Execute(sensor => sensor.StartObservation())
-                    .With(() => this.Kernel.Get<IMakeAwareOfHeartbeat>())
-                    .With(() => this.Kernel.Get<IStartHeartbeat>());
+            // HINT : Fill in here
         }
 
         protected override void DefineShutdownSyntax(ISyntaxBuilder<ISensor> builder)
         {
-            builder
-                .Execute(sensor => sensor.StopObservation())
-                    .With(() => this.standardKernel.Value.Get<IStopHeartbeat>())
-                .End
-                    .With(new DisposeExtensionBehavior());
+            // HINT : Fill in here
         }
 
         protected override void Dispose(bool disposing)

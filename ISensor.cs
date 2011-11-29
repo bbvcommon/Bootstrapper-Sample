@@ -3,6 +3,7 @@
     using bbv.Common.Bootstrapper;
     using bootstrapper.sample.Sirius;
 
+    // HINT : The order of the methods is the order of execution.
     public interface ISensor : IExtension
     {
         void MessageBusInitialized(IVphtMessageBus messageBus);

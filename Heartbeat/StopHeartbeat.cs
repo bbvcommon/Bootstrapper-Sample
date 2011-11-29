@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using bootstrapper.sample.Sirius;
 
+    // HINT : Implement here
     public class StopHeartbeat : IStopHeartbeat
     {
         private readonly IVhptHeartbeatGenerator generator;
@@ -15,21 +16,17 @@
 
         public string Name
         {
-            get { return "Stop heartbeat behavior"; }
+            get { throw new NotImplementedException(); }
         }
 
         public void Behave(IEnumerable<ISensor> extensions)
         {
-            Console.WriteLine("Stopping heartbeat...");
-
-            this.generator.Stop();
-
-            Console.WriteLine("Heartbeat stopped.");
+            throw new NotImplementedException();
         }
 
         public string Describe()
         {
-            return "Stops the heartbeat";
+            throw new NotImplementedException();
         }
     }
 }

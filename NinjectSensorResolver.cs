@@ -1,7 +1,6 @@
 ﻿namespace bootstrapper.sample
 {
     using bbv.Common.Bootstrapper;
-    using Ninject;
     using Ninject.Syntax;
 
     public class NinjectSensorResolver : IExtensionResolver<ISensor>
@@ -15,9 +14,7 @@
 
         public void Resolve(IExtensionPoint<ISensor> extensionPoint)
         {
-            extensionPoint.AddExtension(this.resolutionRoot.Get<IDoorSensor>());
-            extensionPoint.AddExtension(this.resolutionRoot.Get<ISerotoninSensor>());
-            extensionPoint.AddExtension(this.resolutionRoot.Get<IBlackHoleSensor>());
+            // Hint : Resolve extensions with IResolutionRoot
         }
     }
 }

@@ -23,17 +23,17 @@
             });
         };
 
-        It should_not_enter_panic_mode_ = () =>
+        It should_enter_panic_mode_ = () =>
         {
             SerotoninSensor.InPanicMode.Should().BeTrue();
         };
 
-        It should_not_indicate_on_databus_panic_mode = () =>
+        It should_indicate_on_databus_panic_mode = () =>
         {
             DataBus.Sent.Should().Contain(d => d.Originator == "Serotonin Sensor" && d.Content.EndsWith("We are going to die!"));
         };
 
-        It should_indicate_disabled_panic_mode = () =>
+        It should_indicate_enabled_panic_mode = () =>
         {
             SerotoninSensor.Should().NotBeNull();
             SerotoninSensor.PanicModeEnabled.Should().BeTrue();

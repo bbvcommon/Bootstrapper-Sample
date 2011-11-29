@@ -1,8 +1,7 @@
 ﻿namespace bootstrapper.sample
 {
-    using bbv.Common.Bootstrapper;
-
-    public interface ISensor : IExtension
+    // HINT: A small detail is missing here
+    public interface ISensor
     {
         void StartObservation();
 

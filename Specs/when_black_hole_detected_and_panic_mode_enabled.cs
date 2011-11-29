@@ -21,17 +21,17 @@
             });
         };
 
-        It should_not_enter_panic_mode_ = () =>
+        It should_enter_panic_mode_ = () =>
         {
             // HINT : Fill in here
         };
 
-        It should_not_indicate_on_databus_panic_mode = () =>
+        It should_indicate_on_databus_panic_mode = () =>
         {
             // HINT : Fill in here
         };
 
-        It should_indicate_disabled_panic_mode = () =>
+        It should_indicate_enabled_panic_mode = () =>
         {
             // HINT : Fill in here
         };
